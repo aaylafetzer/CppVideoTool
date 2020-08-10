@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.17)
 project(CppVideoTool)
 
 find_package(OpenCV REQUIRED)
+find_package(argparse REQUIRED)
+
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
 set(CMAKE_CXX_STANDARD 20)

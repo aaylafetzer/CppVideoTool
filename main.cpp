@@ -8,11 +8,8 @@ private:
     std::string variable;
     std::string value;
 public:
-    Filter(std::string variableIn, std::string valueIn) {
-        variable = std::move(variableIn);
-        value = std::move(valueIn);
-    }
-    std::string getValue() {
+    Filter(std::string  variable, std::string  value) : variable(std::move(variable)), value(std::move(value)) {}
+    std::string const& getValue() {
         return value;
     }
     bool variableIs(const std::string& test) {
@@ -121,7 +118,7 @@ int main(int argc, char *argv[] )
                 cv::resize(frame, intermediateFrame, cv::Size(outputResolution[0], outputResolution[1]));
                 frame = intermediateFrame;
             }
-            // Slice
+            // ROI
             intermediateFrame = frame;
             frame = intermediateFrame(cv::Range(slice[0], slice[2]),
                           cv::Range(slice[1], slice[3]));
