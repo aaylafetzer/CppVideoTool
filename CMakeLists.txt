@@ -1,13 +1,9 @@
 cmake_minimum_required(VERSION 3.17)
 project(CppVideoTool)
 
-find_package(OpenCV REQUIRED)
-find_package(argparse REQUIRED)
-
-include_directories( ${OpenCV_INCLUDE_DIRS} )
+add_subdirectory(${PROJECT_SOURCE_DIR}/thirdparty)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(CppVideoTool main.cpp)
-
-target_link_libraries( CppVideoTool ${OpenCV_LIBS} )
+add_executable(${PROJECT_NAME} main.cpp)
+target_link_libraries( ${PROJECT_NAME} ${OpenCV_LIBS} )

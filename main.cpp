@@ -1,6 +1,6 @@
 #include <string>
-#include <opencv2/opencv.hpp>
-#include <argparse/argparse.hpp>
+#include "thirdparty/opencv/include/opencv2/opencv.hpp"
+#include "thirdparty/argparse/include/argparse/argparse.hpp"
 #include <utility>
 
 class Filter {
